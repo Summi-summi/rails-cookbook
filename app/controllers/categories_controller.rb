@@ -5,18 +5,19 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @recipes = @category.recipes
   end
 
   def new
     @category = Category.new
   end
 
-  def edit
+  def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to category_path(@category), notice: "Category successfully created!"
+      redirect_to categories_path, notice: "Category successfully created!"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

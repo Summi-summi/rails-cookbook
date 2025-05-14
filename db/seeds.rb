@@ -71,3 +71,5 @@ Recipe.create!{
   umage_url: "https://www.allrecipes.com/thmb/WB8AXEErLpzGq1ocQZK-xohxyvo=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/AR-19037-Dessert-Crepes-DDMFS-4x3-18ea3910686141d5aa4a43ffcd926dc5.jpg"
   rating: 5
 }
+
+puts "Done! #{Recipe.count} recipes created!"
