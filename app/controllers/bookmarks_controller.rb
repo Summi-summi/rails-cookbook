@@ -9,7 +9,7 @@ class BookmarksController < ApplicationController
     @bookmark = @category.bookmarks.new(bookmark_params)
     @bookmark.category = @category
 
-    if @bookmark.save
+    if @bookmark.save!
       redirect_to category_path(@category), notice: "Recipe added!"
     else
       render :new, status: :unprocessable_entity
